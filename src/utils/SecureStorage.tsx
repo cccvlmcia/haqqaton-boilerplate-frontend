@@ -1,6 +1,6 @@
 import CryptoJS from "crypto-js";
 import {LocalStorage} from "typescript-web-storage";
-const SECRET_KEY = "ciabootcamp";
+const SECRET_KEY = import.meta.env.VITE_STORAGE_SECRET_KEY;
 export function getHash(value: string) {
   const key = CryptoJS.SHA256(value, {SECRET_KEY});
   return key;
