@@ -25,7 +25,7 @@ export default function Editor() {
   // 글 작성 버튼
   const dataPost = async (params: any) => {
     console.log("params >> ", params);
-    const {data} = await axios.post("api/article/");
+    const {data} = await axios.post("/api/article/");
   };
 
   return (

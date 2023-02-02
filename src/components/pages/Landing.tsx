@@ -2,7 +2,7 @@ import {useQuery} from "react-query";
 import axios from "axios";
 import React, {Suspense, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState} from "recoil";
 
 import {Box, Button} from "@mui/material";
 
