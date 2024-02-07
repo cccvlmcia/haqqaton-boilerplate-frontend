@@ -11,6 +11,7 @@ import Editor from "@pages/Editor";
 import Sample from "@pages/Sample";
 import List from "@pages/List";
 import Auth from "@hoc/auth";
+import Test from "@pages/test";
 
 export default function App() {
   const {formatMessage} = useIntl();
@@ -35,6 +36,12 @@ export default function App() {
         <Box component="li">
           <Link to="/contactus">{formatMessage({id: "menu.contact.us"})}</Link>
         </Box>
+        <Box component="li">
+          <Link to="/test">Test</Link>
+        </Box>
+        <Box component="li">
+          <Link to="/test/123">Test123</Link>
+        </Box>
       </Box>
       <Routes>
         <Route element={<Layout />}>
@@ -43,6 +50,8 @@ export default function App() {
           <Route path="/about" element={Auth(About, null)}></Route>
           <Route path="/write" element={Auth(Editor, null)}></Route>
           <Route path="/list" element={Auth(List, null)}></Route>
+          <Route path="/test" element={Auth(Test, null)}></Route>
+          <Route path="/test/:id" element={Auth(Test, null)}></Route>
         </Route>
         <Route path="/*" element={Auth(NotFound, null)} />
       </Routes>
